@@ -1,0 +1,24 @@
+package cn.mlus.bettervannilacreatures.data;
+
+import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
+public class BvcItemModelProvider extends ItemModelProvider {
+    public BvcItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper){
+        super(output, BetterVannilaCreatures.MODID, existingFileHelper);
+    }
+
+    @Override
+    protected void registerModels() {
+
+    }
+
+    private void simpleItem(Item item) {
+        String path = BuiltInRegistries.ITEM.getKey(item).getPath();
+        this.withExistingParent(path, this.mcLoc("item/generated"))
+                .texture("layer0", this.modLoc("item/" + path));
+    }
+}
