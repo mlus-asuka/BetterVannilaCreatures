@@ -1,8 +1,10 @@
 package cn.mlus.bettervannilacreatures.data;
 
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
+import cn.mlus.bettervannilacreatures.init.BvcEntities;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
@@ -15,7 +17,14 @@ public class BvcBiomeSpawnCostModifier implements BiomeModifier {
     @Override
     public void modify(final Holder<Biome> biome, final Phase phase, final ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (phase == Phase.ADD) {
-
+            if(biome.is(BiomeTags.IS_OCEAN)){
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_COD.get(),0.7,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_ATLANTIC.get(),0.8,0.1);
+            }
+            if(biome.is(BiomeTags.IS_RIVER)){
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_MALE.get(),0.7,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_FEMALE.get(),0.7,0.1);
+            }
         }
     }
 

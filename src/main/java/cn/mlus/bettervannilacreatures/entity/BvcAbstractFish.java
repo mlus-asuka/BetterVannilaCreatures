@@ -1,7 +1,5 @@
 package cn.mlus.bettervannilacreatures.entity;
 
-import cn.mlus.bettervannilacreatures.client.animator.BvcFishAnimator;
-import cn.mlus.bettervannilacreatures.client.animator.GeneralAnimator;
 import cn.mlus.bettervannilacreatures.client.render.entity.ai.BvcFishMoveControl;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -20,6 +18,7 @@ import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Math;
@@ -30,7 +29,7 @@ import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends AbstractFish implements GeoEntity{
+public abstract class BvcAbstractFish extends AbstractFish implements GeoEntity{
 
     public BvcAbstractFish(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -41,14 +40,6 @@ public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends Abst
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     protected static final EntityDataAccessor<Integer> DATA_VARIANT = SynchedEntityData.defineId(BvcAbstractFish.class, EntityDataSerializers.INT);
     protected static final EntityDataAccessor<Float> SCALE = SynchedEntityData.defineId(BvcAbstractFish.class, EntityDataSerializers.FLOAT);
-
-    public @NotNull BvcCodEntity.Variant getVariant() {
-        return BvcCodEntity.Variant.byId(this.entityData.get(DATA_VARIANT));
-    }
-
-    public void setVariant(BvcCodEntity.Variant pVariant) {
-        this.entityData.set(DATA_VARIANT, pVariant.getId());
-    }
 
     @Override
     protected void defineSynchedData() {
@@ -69,7 +60,6 @@ public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends Abst
     public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
         compoundTag.putFloat("Scale", getScale());
-        compoundTag.putInt("Variant", this.getVariant().getId());
     }
 
     @Override
@@ -85,8 +75,13 @@ public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends Abst
     }
 
     @Override
+    public int getMaxSpawnClusterSize() {
+        return 10;
+    }
+
+    @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        AnimationController<BvcAbstractFish<?>> main = new AnimationController<>(this, "main", 4, state -> {
+        AnimationController<BvcAbstractFish> main = new AnimationController<>(this, "main", 0, state -> {
             RawAnimation builder = RawAnimation.begin();
             if(isInWater()){
                 if (isSprinting()) {
@@ -105,7 +100,10 @@ public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends Abst
     }
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 3.0);
+        return Mob.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 3.0)
+                .add(Attributes.MOVEMENT_SPEED,0.8)
+                .add(ForgeMod.SWIM_SPEED.get(),1);
     }
 
     @Override
@@ -126,8 +124,24 @@ public abstract class BvcAbstractFish<T extends BvcAbstractFish<?>> extends Abst
             }
         };
 
-        this.goalSelector.addGoal(1, this.randomSwimmingGoal);
-        this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 16.0F, 1.6, 1.4));
+        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 32.0F, 1, 3){
+            @Override
+            public void start() {
+                super.start();
+                this.mob.setSprinting(true);
+                this.mob.getNavigation().setSpeedModifier(4);
+                this.mob.getAttribute(ForgeMod.SWIM_SPEED.get()).setBaseValue(4);
+            }
+
+            @Override
+            public void stop() {
+                super.stop();
+                this.mob.setSprinting(false);
+                this.mob.getNavigation().setSpeedModifier(1);
+                this.mob.getAttribute(ForgeMod.SWIM_SPEED.get()).setBaseValue(1);
+            }
+        });
+        this.goalSelector.addGoal(2, this.randomSwimmingGoal);
         this.goalSelector.addGoal(3, new TryFindWaterGoal(this));
     }
 

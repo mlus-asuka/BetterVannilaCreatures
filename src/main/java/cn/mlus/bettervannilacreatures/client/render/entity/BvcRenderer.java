@@ -14,7 +14,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 public class BvcRenderer<T extends Mob & BvcEntity<T> & GeoAnimatable> extends GeoEntityRenderer<T> {
     public BvcRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new BvcModel<>());
-        this.XRotDegree = 25;
+        this.XRotDegree = 50;
     }
 
     public BvcRenderer(EntityRendererProvider.Context renderManager, float XRotDegree) {
@@ -24,7 +24,7 @@ public class BvcRenderer<T extends Mob & BvcEntity<T> & GeoAnimatable> extends G
 
     public BvcRenderer(EntityRendererProvider.Context renderManager, GeoModel<T> model) {
         super(renderManager, model);
-        this.XRotDegree = 25;
+        this.XRotDegree = 50;
     }
 
     public BvcRenderer(EntityRendererProvider.Context renderManager, GeoModel<T> model, float XRotDegree) {

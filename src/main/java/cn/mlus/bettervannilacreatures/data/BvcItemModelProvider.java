@@ -1,6 +1,7 @@
 package cn.mlus.bettervannilacreatures.data;
 
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
+import cn.mlus.bettervannilacreatures.init.BvcItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -13,7 +14,15 @@ public class BvcItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        this.simpleItem(BvcItems.MALE_SALMON_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.FEMALE_SALMON_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.ATLANTIC_SALMON_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.MALE_SALMON_BUCKET.get());
+        this.simpleItem(BvcItems.FEMALE_SALMON_BUCKET.get());
+        this.simpleItem(BvcItems.ATLANTIC_SALMON_BUCKET.get());
+        this.simpleItem(BvcItems.MALE_SALMON.get());
+        this.simpleItem(BvcItems.FEMALE_SALMON.get());
+        this.simpleItem(BvcItems.ATLANTIC_SALMON.get());
     }
 
     private void simpleItem(Item item) {

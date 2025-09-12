@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.function.IntFunction;
 
-public class BvcCodEntity extends BvcAbstractFish<BvcCodEntity> implements VariantHolder<BvcCodEntity.Variant>, BvcEntity<BvcCodEntity>{
+public class BvcCodEntity extends BvcAbstractFish implements VariantHolder<BvcCodEntity.Variant>, BvcEntity<BvcCodEntity>{
     public BvcCodEntity(EntityType<? extends AbstractFish> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         animator = new BvcFishAnimator<>(this);
@@ -39,6 +39,14 @@ public class BvcCodEntity extends BvcAbstractFish<BvcCodEntity> implements Varia
     public void tick() {
         super.tick();
         animator.tick();
+    }
+
+    public @NotNull Variant getVariant() {
+        return Variant.byId(this.entityData.get(DATA_VARIANT));
+    }
+
+    public void setVariant(Variant pVariant) {
+        this.entityData.set(DATA_VARIANT, pVariant.getId());
     }
 
     public @NotNull ItemStack getBucketItemStack() {
@@ -76,6 +84,12 @@ public class BvcCodEntity extends BvcAbstractFish<BvcCodEntity> implements Varia
 
             return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         }
+    }
+
+    @Override
+    public void addAdditionalSaveData(@NotNull CompoundTag compoundTag) {
+        super.addAdditionalSaveData(compoundTag);
+        compoundTag.putInt("Variant", this.getVariant().getId());
     }
 
     @Override

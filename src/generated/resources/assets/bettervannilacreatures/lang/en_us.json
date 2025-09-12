@@ -1,0 +1,15 @@
+{
+  "entity.bettervannilacreatures.atlantic_salmon": "Atlantic Salmon",
+  "entity.bettervannilacreatures.cod": "Cod",
+  "entity.bettervannilacreatures.female_salmon": "Female Salmon",
+  "entity.bettervannilacreatures.male_salmon": "Male Salmon",
+  "item.bettervannilacreatures.atlantic_salmon": "Atlantic Salmon",
+  "item.bettervannilacreatures.atlantic_salmon_bucket": "Atlantic Salmon Bucket",
+  "item.bettervannilacreatures.atlantic_salmon_spawn_egg": "Atlantic Salmon Spawn Egg",
+  "item.bettervannilacreatures.female_salmon": "Female Salmon",
+  "item.bettervannilacreatures.female_salmon_bucket": "Female Salmon Bucket",
+  "item.bettervannilacreatures.female_salmon_spawn_egg": "Female Salmon Spawn Egg",
+  "item.bettervannilacreatures.male_salmon": "Male Salmon",
+  "item.bettervannilacreatures.male_salmon_bucket": "Male Salmon Bucket",
+  "item.bettervannilacreatures.male_salmon_spawn_egg": "Male Salmon Spawn Egg"
+}

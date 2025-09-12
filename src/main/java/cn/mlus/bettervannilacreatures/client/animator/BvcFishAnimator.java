@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 
 import java.util.List;
 
-public class BvcFishAnimator<T extends BvcAbstractFish<?>> extends GeneralAnimator<T> {
+public class BvcFishAnimator<T extends BvcAbstractFish> extends GeneralAnimator<T> {
     public BvcFishAnimator(T entity) {
         super(entity);
     }
