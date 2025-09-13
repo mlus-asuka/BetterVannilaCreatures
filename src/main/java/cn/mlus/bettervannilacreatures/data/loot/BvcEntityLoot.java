@@ -21,7 +21,21 @@ import java.util.stream.Stream;
 public class BvcEntityLoot extends VanillaEntityLoot {
     @Override
     public void generate() {
-        this.add(BvcEntities.BVC_COD.get(), LootTable.lootTable());
+        this.add(BvcEntities.BVC_HADDOCK_COD.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(BvcItems.HADDOCK_COD.get()))
+                        .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))));
+        this.add(BvcEntities.BVC_ATLANTIC_COD.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(BvcItems.ATLANTIC_COD.get()))
+                        .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))));
+        this.add(BvcEntities.BVC_PACIFIC_COD.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(BvcItems.PACIFIC_COD.get()))
+                        .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))));
         this.add(BvcEntities.BVC_SALMON_MALE.get(),LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))

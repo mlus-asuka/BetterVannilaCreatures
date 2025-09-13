@@ -14,7 +14,9 @@ import net.minecraftforge.fml.common.Mod;
 public final class ClientModListener {
 	@SubscribeEvent
 	public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(BvcEntities.BVC_COD.get(),(context)-> new BvcRenderer<>(context, new CodModel()));
+		event.registerEntityRenderer(BvcEntities.BVC_HADDOCK_COD.get(),(context)-> new BvcRenderer<>(context, new CodModel()));
+		event.registerEntityRenderer(BvcEntities.BVC_ATLANTIC_COD.get(),(context)-> new BvcRenderer<>(context, new CodModel()));
+		event.registerEntityRenderer(BvcEntities.BVC_PACIFIC_COD.get(),(context)-> new BvcRenderer<>(context, new CodModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_MALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_FEMALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_ATLANTIC.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));

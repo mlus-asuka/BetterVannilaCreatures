@@ -1,7 +1,7 @@
 package cn.mlus.bettervannilacreatures.client.model.entity;
 
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
-import cn.mlus.bettervannilacreatures.entity.BvcSalmonEntity;
+import cn.mlus.bettervannilacreatures.entity.salmon.BvcSalmonEntity;
 import net.minecraft.resources.ResourceLocation;
 
 public class SalmonModel extends BvcModel<BvcSalmonEntity>{

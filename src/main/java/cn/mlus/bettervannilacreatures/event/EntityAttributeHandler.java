@@ -21,7 +21,9 @@ import net.minecraftforge.fml.common.Mod;
 public class EntityAttributeHandler {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(BvcEntities.BVC_COD.get(), BvcAbstractFish.createAttributes().build());
+        event.put(BvcEntities.BVC_HADDOCK_COD.get(), BvcAbstractFish.createAttributes().build());
+        event.put(BvcEntities.BVC_ATLANTIC_COD.get(), BvcAbstractFish.createAttributes().build());
+        event.put(BvcEntities.BVC_PACIFIC_COD.get(), BvcAbstractFish.createAttributes().build());
         event.put(BvcEntities.BVC_SALMON_MALE.get(), BvcAbstractFish.createAttributes().build());
         event.put(BvcEntities.BVC_SALMON_FEMALE.get(), BvcAbstractFish.createAttributes().build());
         event.put(BvcEntities.BVC_SALMON_ATLANTIC.get(), BvcAbstractFish.createAttributes().build());
@@ -29,7 +31,9 @@ public class EntityAttributeHandler {
 
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-        event.register(BvcEntities.BVC_COD.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCodSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(BvcEntities.BVC_HADDOCK_COD.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCodSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(BvcEntities.BVC_ATLANTIC_COD.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCodSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(BvcEntities.BVC_PACIFIC_COD.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCodSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(BvcEntities.BVC_SALMON_MALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(BvcEntities.BVC_SALMON_FEMALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(BvcEntities.BVC_SALMON_ATLANTIC.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);

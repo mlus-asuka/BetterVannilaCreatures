@@ -14,12 +14,21 @@ public class BvcItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.simpleItem(BvcItems.HADDOCK_COD_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.ATLANTIC_COD_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.PACIFIC_COD_SPAWN_EGG.get());
         this.simpleItem(BvcItems.MALE_SALMON_SPAWN_EGG.get());
         this.simpleItem(BvcItems.FEMALE_SALMON_SPAWN_EGG.get());
         this.simpleItem(BvcItems.ATLANTIC_SALMON_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.HADDOCK_COD_BUCKET.get());
+        this.simpleItem(BvcItems.ATLANTIC_COD_BUCKET.get());
+        this.simpleItem(BvcItems.PACIFIC_COD_BUCKET.get());
         this.simpleItem(BvcItems.MALE_SALMON_BUCKET.get());
         this.simpleItem(BvcItems.FEMALE_SALMON_BUCKET.get());
         this.simpleItem(BvcItems.ATLANTIC_SALMON_BUCKET.get());
+        this.simpleItem(BvcItems.HADDOCK_COD.get());
+        this.simpleItem(BvcItems.ATLANTIC_COD.get());
+        this.simpleItem(BvcItems.PACIFIC_COD.get());
         this.simpleItem(BvcItems.MALE_SALMON.get());
         this.simpleItem(BvcItems.FEMALE_SALMON.get());
         this.simpleItem(BvcItems.ATLANTIC_SALMON.get());

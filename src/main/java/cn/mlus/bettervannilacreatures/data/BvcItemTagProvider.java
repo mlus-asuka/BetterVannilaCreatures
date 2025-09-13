@@ -22,6 +22,9 @@ public class BvcItemTagProvider extends ItemTagsProvider{
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         this.tag(ItemTags.FISHES)
+                .add(BvcItems.HADDOCK_COD.get())
+                .add(BvcItems.ATLANTIC_COD.get())
+                .add(BvcItems.PACIFIC_COD.get())
                 .add(BvcItems.MALE_SALMON.get())
                 .add(BvcItems.FEMALE_SALMON.get())
                 .add(BvcItems.ATLANTIC_SALMON.get());

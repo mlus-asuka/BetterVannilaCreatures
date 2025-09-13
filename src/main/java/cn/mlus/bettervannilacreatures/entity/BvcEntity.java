@@ -6,4 +6,5 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 
 public interface BvcEntity<T extends Mob & GeoAnimatable> {
     GeneralAnimator<T> getAnimator();
+    float getScale();
 }

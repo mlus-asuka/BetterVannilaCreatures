@@ -18,7 +18,9 @@ public class BvcBiomeSpawnCostModifier implements BiomeModifier {
     public void modify(final Holder<Biome> biome, final Phase phase, final ModifiableBiomeInfo.BiomeInfo.Builder builder) {
         if (phase == Phase.ADD) {
             if(biome.is(BiomeTags.IS_OCEAN)){
-                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_COD.get(),0.7,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_HADDOCK_COD.get(),0.7,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_PACIFIC_COD.get(),0.7,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_ATLANTIC_COD.get(),0.7,0.1);
                 builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_ATLANTIC.get(),0.8,0.1);
             }
             if(biome.is(BiomeTags.IS_RIVER)){

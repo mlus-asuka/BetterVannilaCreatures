@@ -2,7 +2,7 @@
   "type": "forge:add_spawns",
   "biomes": "#minecraft:is_ocean",
   "spawners": {
-    "type": "bettervannilacreatures:cod",
+    "type": "bettervannilacreatures:pacific_cod",
     "maxCount": 9,
     "minCount": 3,
     "weight": 12

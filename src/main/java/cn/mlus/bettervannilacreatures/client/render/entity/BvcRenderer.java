@@ -38,6 +38,8 @@ public class BvcRenderer<T extends Mob & BvcEntity<T> & GeoAnimatable> extends G
     protected void applyRotations(T animatable, PoseStack poseStack, float ageInTicks, float rotationYaw, float partialTick) {
         super.applyRotations(animatable, poseStack, ageInTicks, rotationYaw, partialTick);
         GeneralAnimator<? extends T> animator = animatable.getAnimator();
+        float scale = animatable.getScale();
+        poseStack.scale(scale, scale, scale);
 
         poseStack.mulPose(Axis.XP.rotationDegrees(animator.getModelPitch(partialTick, XRotDegree)));
     }
