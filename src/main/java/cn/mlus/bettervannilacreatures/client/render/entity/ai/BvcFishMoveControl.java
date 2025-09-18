@@ -44,7 +44,7 @@ public class BvcFishMoveControl extends MoveControl {
                 float $$5 = (float)(this.speedModifier * this.mob.getAttributeValue(Attributes.MOVEMENT_SPEED));
                 if (this.mob.isInWater()) {
 
-                    if(Mth.abs(Mth.degreesDifference(this.fish.getYRot(),this.fish.yBodyRot)) < 1)
+//                    if(Mth.abs(Mth.degreesDifference(this.fish.getYRot(),this.fish.yBodyRot)) < 1)
                         this.mob.setSpeed($$5 * this.inWaterSpeedModifier);
 
                     double $$6 = Math.sqrt($$0 * $$0 + $$2 * $$2);

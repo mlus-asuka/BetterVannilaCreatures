@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ers"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "bettervannilacreatures:atlantic_cod"
+          }
+        ],
+        "result": {
+          "count": 2,
+          "item": "ers:fish_fillet"
+        }
+      }
+    }
+  ]
+}

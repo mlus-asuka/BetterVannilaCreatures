@@ -103,17 +103,17 @@ public class BvcItems {
             ));
     //Food
     public static final RegistryObject<Item> HADDOCK_COD = ITEMS.register("haddock_cod",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> ATLANTIC_COD = ITEMS.register("atlantic_cod",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> PACIFIC_COD = ITEMS.register("pacific_cod",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> MALE_SALMON = ITEMS.register("male_salmon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> FEMALE_SALMON = ITEMS.register("female_salmon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> ATLANTIC_SALMON = ITEMS.register("atlantic_salmon",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).build())));
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
