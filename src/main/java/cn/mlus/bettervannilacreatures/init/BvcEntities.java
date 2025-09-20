@@ -4,7 +4,7 @@ import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.entity.cod.AtlanticCod;
 import cn.mlus.bettervannilacreatures.entity.cod.HaddockCod;
 import cn.mlus.bettervannilacreatures.entity.cod.PacificCod;
-import cn.mlus.bettervannilacreatures.entity.salmon.AtlanticSalmon;
+import cn.mlus.bettervannilacreatures.entity.salmon.PacificSalmon;
 import cn.mlus.bettervannilacreatures.entity.salmon.FemaleSalmon;
 import cn.mlus.bettervannilacreatures.entity.salmon.MaleSalmon;
 import net.minecraft.resources.ResourceLocation;
@@ -41,10 +41,10 @@ public class BvcEntities {
                     .sized(1F, 1F)
                     .build(ResourceLocation.fromNamespaceAndPath(BetterVannilaCreatures.MODID, "female_salmon").toString()));
 
-    public static final RegistryObject<EntityType<AtlanticSalmon>> BVC_SALMON_ATLANTIC = ENTITIES.register("atlantic_salmon",
-            () -> EntityType.Builder.of(AtlanticSalmon::new, MobCategory.WATER_AMBIENT)
+    public static final RegistryObject<EntityType<PacificSalmon>> BVC_SALMON_PACIFIC = ENTITIES.register("pacific_salmon",
+            () -> EntityType.Builder.of(PacificSalmon::new, MobCategory.WATER_AMBIENT)
                     .sized(1F, 1F)
-                    .build(ResourceLocation.fromNamespaceAndPath(BetterVannilaCreatures.MODID, "atlantic_salmon").toString()));
+                    .build(ResourceLocation.fromNamespaceAndPath(BetterVannilaCreatures.MODID, "pacific_salmon").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);

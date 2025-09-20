@@ -35,8 +35,8 @@ public class BvcRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(BvcItems.PACIFIC_COD.get()), has(BvcItems.PACIFIC_COD.get())),"fish_fillet_from_pacific_cod")
                 .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_pacific_cod"));
         buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 3)
-                .requires(BvcItems.ATLANTIC_SALMON.get())
-                .unlockedBy(getHasName(BvcItems.ATLANTIC_SALMON.get()), has(BvcItems.ATLANTIC_SALMON.get())),"fish_fillet_from_atlantic_salmon")
+                .requires(BvcItems.PACIFIC_SALMON.get())
+                .unlockedBy(getHasName(BvcItems.PACIFIC_SALMON.get()), has(BvcItems.PACIFIC_SALMON.get())),"fish_fillet_from_atlantic_salmon")
                 .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_atlantic_salmon"));
         buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 3)
                 .requires(BvcItems.MALE_SALMON.get())

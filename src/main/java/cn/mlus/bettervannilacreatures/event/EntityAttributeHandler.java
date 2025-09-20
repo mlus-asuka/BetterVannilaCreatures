@@ -26,7 +26,7 @@ public class EntityAttributeHandler {
         event.put(BvcEntities.BVC_PACIFIC_COD.get(), BvcAbstractFish.createAttributes().build());
         event.put(BvcEntities.BVC_SALMON_MALE.get(), BvcAbstractFish.createAttributes().build());
         event.put(BvcEntities.BVC_SALMON_FEMALE.get(), BvcAbstractFish.createAttributes().build());
-        event.put(BvcEntities.BVC_SALMON_ATLANTIC.get(), BvcAbstractFish.createAttributes().build());
+        event.put(BvcEntities.BVC_SALMON_PACIFIC.get(), BvcAbstractFish.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -36,7 +36,7 @@ public class EntityAttributeHandler {
         event.register(BvcEntities.BVC_PACIFIC_COD.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCodSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(BvcEntities.BVC_SALMON_MALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(BvcEntities.BVC_SALMON_FEMALE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
-        event.register(BvcEntities.BVC_SALMON_ATLANTIC.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(BvcEntities.BVC_SALMON_PACIFIC.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityAttributeHandler::checkCustomWaterSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 
     public static boolean checkCodSpawnRules(

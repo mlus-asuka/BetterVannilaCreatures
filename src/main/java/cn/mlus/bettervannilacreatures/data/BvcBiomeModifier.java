@@ -39,7 +39,7 @@ public class BvcBiomeModifier
         addSpawn(context,"pacific_cod", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_PACIFIC_COD.get(),12,3,9));
         addSpawn(context, "male_salmon", BiomeTags.IS_RIVER, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_MALE.get(), 12, 2, 6));
         addSpawn(context, "female_salmon", BiomeTags.IS_RIVER, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_FEMALE.get(), 12, 2, 6));
-        addSpawn(context, "atlantic_salmon", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_ATLANTIC.get(), 12, 3, 9));
+        addSpawn(context, "atlantic_salmon", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_PACIFIC.get(), 12, 3, 9));
     }
 
     private static void addSpawn(BootstapContext<BiomeModifier> context, String name, TagKey<Biome> biomes, MobSpawnSettings.SpawnerData... spawns) {

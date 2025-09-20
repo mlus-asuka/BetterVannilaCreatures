@@ -27,6 +27,6 @@ public class BvcItemTagProvider extends ItemTagsProvider{
                 .add(BvcItems.PACIFIC_COD.get())
                 .add(BvcItems.MALE_SALMON.get())
                 .add(BvcItems.FEMALE_SALMON.get())
-                .add(BvcItems.ATLANTIC_SALMON.get());
+                .add(BvcItems.PACIFIC_SALMON.get());
     }
 }

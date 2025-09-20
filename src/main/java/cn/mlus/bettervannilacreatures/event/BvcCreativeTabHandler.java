@@ -19,7 +19,7 @@ public class BvcCreativeTabHandler {
             event.accept(BvcItems.PACIFIC_COD_SPAWN_EGG.get());
             event.accept(BvcItems.MALE_SALMON_SPAWN_EGG.get());
             event.accept(BvcItems.FEMALE_SALMON_SPAWN_EGG.get());
-            event.accept(BvcItems.ATLANTIC_SALMON_SPAWN_EGG.get());
+            event.accept(BvcItems.PACIFIC_SALMON_SPAWN_EGG.get());
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(BvcItems.HADDOCK_COD.get());
@@ -27,7 +27,7 @@ public class BvcCreativeTabHandler {
             event.accept(BvcItems.PACIFIC_COD.get());
             event.accept(BvcItems.MALE_SALMON.get());
             event.accept(BvcItems.FEMALE_SALMON.get());
-            event.accept(BvcItems.ATLANTIC_SALMON.get());
+            event.accept(BvcItems.PACIFIC_SALMON.get());
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.HADDOCK_COD_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -35,7 +35,7 @@ public class BvcCreativeTabHandler {
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.PACIFIC_COD_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.MALE_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.FEMALE_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.ATLANTIC_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.PACIFIC_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 }

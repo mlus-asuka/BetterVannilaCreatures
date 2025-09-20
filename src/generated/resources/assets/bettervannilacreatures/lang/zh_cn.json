@@ -1,16 +1,13 @@
 {
   "entity.bettervannilacreatures.atlantic_cod": "大西洋鳕鱼",
-  "entity.bettervannilacreatures.atlantic_salmon": "大西洋鲑鱼",
   "entity.bettervannilacreatures.female_salmon": "雌性鲑鱼",
   "entity.bettervannilacreatures.haddock_cod": "黑线鳕鱼",
   "entity.bettervannilacreatures.male_salmon": "雄性鲑鱼",
   "entity.bettervannilacreatures.pacific_cod": "太平洋鳕鱼",
+  "entity.bettervannilacreatures.pacific_salmon": "太平洋鲑鱼",
   "item.bettervannilacreatures.atlantic_cod": "大西洋鳕鱼",
   "item.bettervannilacreatures.atlantic_cod_bucket": "大西洋鳕鱼桶",
   "item.bettervannilacreatures.atlantic_cod_spawn_egg": "大西洋鳕鱼生成蛋",
-  "item.bettervannilacreatures.atlantic_salmon": "大西洋鲑鱼",
-  "item.bettervannilacreatures.atlantic_salmon_bucket": "大西洋鲑鱼桶",
-  "item.bettervannilacreatures.atlantic_salmon_spawn_egg": "大西洋鲑鱼生成蛋",
   "item.bettervannilacreatures.female_salmon": "雌性鲑鱼",
   "item.bettervannilacreatures.female_salmon_bucket": "雌性鲑鱼桶",
   "item.bettervannilacreatures.female_salmon_spawn_egg": "雌性鲑鱼生成蛋",
@@ -22,5 +19,8 @@
   "item.bettervannilacreatures.male_salmon_spawn_egg": "雄性鲑鱼生成蛋",
   "item.bettervannilacreatures.pacific_cod": "太平洋鳕鱼",
   "item.bettervannilacreatures.pacific_cod_bucket": "太平洋鳕鱼桶",
-  "item.bettervannilacreatures.pacific_cod_spawn_egg": "太平洋鳕鱼生成蛋"
+  "item.bettervannilacreatures.pacific_cod_spawn_egg": "太平洋鳕鱼生成蛋",
+  "item.bettervannilacreatures.pacific_salmon": "太平洋鲑鱼",
+  "item.bettervannilacreatures.pacific_salmon_bucket": "太平洋鲑鱼桶",
+  "item.bettervannilacreatures.pacific_salmon_spawn_egg": "太平洋鲑鱼生成蛋"
 }

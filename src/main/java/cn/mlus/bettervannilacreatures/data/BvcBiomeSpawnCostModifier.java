@@ -21,7 +21,7 @@ public class BvcBiomeSpawnCostModifier implements BiomeModifier {
                 builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_HADDOCK_COD.get(),0.7,0.1);
                 builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_PACIFIC_COD.get(),0.7,0.1);
                 builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_ATLANTIC_COD.get(),0.7,0.1);
-                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_ATLANTIC.get(),0.8,0.1);
+                builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_PACIFIC.get(),0.8,0.1);
             }
             if(biome.is(BiomeTags.IS_RIVER)){
                 builder.getMobSpawnSettings().addMobCharge(BvcEntities.BVC_SALMON_MALE.get(),0.7,0.1);

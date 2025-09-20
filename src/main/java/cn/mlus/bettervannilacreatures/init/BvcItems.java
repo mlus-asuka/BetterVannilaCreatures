@@ -51,9 +51,9 @@ public class BvcItems {
                     () -> SoundEvents.BUCKET_EMPTY_FISH,
                     new Item.Properties().stacksTo(1)
             ));
-    public static final RegistryObject<Item> ATLANTIC_SALMON_BUCKET = ITEMS.register("atlantic_salmon_bucket",
+    public static final RegistryObject<Item> PACIFIC_SALMON_BUCKET = ITEMS.register("pacific_salmon_bucket",
             () -> new MobBucketItem(
-                    BvcEntities.BVC_SALMON_ATLANTIC,
+                    BvcEntities.BVC_SALMON_PACIFIC,
                     () -> Fluids.WATER,
                     () -> SoundEvents.BUCKET_EMPTY_FISH,
                     new Item.Properties().stacksTo(1)
@@ -94,9 +94,9 @@ public class BvcItems {
                     0x000000,
                     new Item.Properties()
             ));
-    public static final RegistryObject<Item> ATLANTIC_SALMON_SPAWN_EGG = ITEMS.register("atlantic_salmon_spawn_egg",
+    public static final RegistryObject<Item> PACIFIC_SALMON_SPAWN_EGG = ITEMS.register("pacific_salmon_spawn_egg",
             () -> new ForgeSpawnEggItem(
-                    BvcEntities.BVC_SALMON_ATLANTIC,
+                    BvcEntities.BVC_SALMON_PACIFIC,
                     0xFFFFFF,
                     0x000000,
                     new Item.Properties()
@@ -112,7 +112,7 @@ public class BvcItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> FEMALE_SALMON = ITEMS.register("female_salmon",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
-    public static final RegistryObject<Item> ATLANTIC_SALMON = ITEMS.register("atlantic_salmon",
+    public static final RegistryObject<Item> PACIFIC_SALMON = ITEMS.register("pacific_salmon",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

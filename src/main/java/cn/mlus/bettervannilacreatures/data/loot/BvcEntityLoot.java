@@ -46,10 +46,10 @@ public class BvcEntityLoot extends VanillaEntityLoot {
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BvcItems.FEMALE_SALMON.get()))
                         .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))));
-        this.add(BvcEntities.BVC_SALMON_ATLANTIC.get(),LootTable.lootTable()
+        this.add(BvcEntities.BVC_SALMON_PACIFIC.get(),LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(BvcItems.ATLANTIC_SALMON.get()))
+                        .add(LootItem.lootTableItem(BvcItems.PACIFIC_SALMON.get()))
                         .apply(SmeltItemFunction.smelted().when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))));
     }
 

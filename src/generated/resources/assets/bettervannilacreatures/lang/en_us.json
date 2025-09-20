@@ -1,16 +1,13 @@
 {
   "entity.bettervannilacreatures.atlantic_cod": "Atlantic Cod",
-  "entity.bettervannilacreatures.atlantic_salmon": "Atlantic Salmon",
   "entity.bettervannilacreatures.female_salmon": "Female Salmon",
   "entity.bettervannilacreatures.haddock_cod": "Haddock Cod",
   "entity.bettervannilacreatures.male_salmon": "Male Salmon",
   "entity.bettervannilacreatures.pacific_cod": "Pacific Cod",
+  "entity.bettervannilacreatures.pacific_salmon": "Pacific Salmon",
   "item.bettervannilacreatures.atlantic_cod": "Atlantic Cod",
   "item.bettervannilacreatures.atlantic_cod_bucket": "Atlantic Cod Bucket",
   "item.bettervannilacreatures.atlantic_cod_spawn_egg": "Atlantic Cod Spawn Egg",
-  "item.bettervannilacreatures.atlantic_salmon": "Atlantic Salmon",
-  "item.bettervannilacreatures.atlantic_salmon_bucket": "Atlantic Salmon Bucket",
-  "item.bettervannilacreatures.atlantic_salmon_spawn_egg": "Atlantic Salmon Spawn Egg",
   "item.bettervannilacreatures.female_salmon": "Female Salmon",
   "item.bettervannilacreatures.female_salmon_bucket": "Female Salmon Bucket",
   "item.bettervannilacreatures.female_salmon_spawn_egg": "Female Salmon Spawn Egg",
@@ -22,5 +19,8 @@
   "item.bettervannilacreatures.male_salmon_spawn_egg": "Male Salmon Spawn Egg",
   "item.bettervannilacreatures.pacific_cod": "Pacific Cod",
   "item.bettervannilacreatures.pacific_cod_bucket": "Pacific Cod Bucket",
-  "item.bettervannilacreatures.pacific_cod_spawn_egg": "Pacific Cod Spawn Egg"
+  "item.bettervannilacreatures.pacific_cod_spawn_egg": "Pacific Cod Spawn Egg",
+  "item.bettervannilacreatures.pacific_salmon": "Pacific Salmon",
+  "item.bettervannilacreatures.pacific_salmon_bucket": "Pacific Salmon Bucket",
+  "item.bettervannilacreatures.pacific_salmon_spawn_egg": "Atlantic Salmon Spawn Egg"
 }

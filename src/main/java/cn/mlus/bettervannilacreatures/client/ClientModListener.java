@@ -19,7 +19,7 @@ public final class ClientModListener {
 		event.registerEntityRenderer(BvcEntities.BVC_PACIFIC_COD.get(),(context)-> new BvcRenderer<>(context, new CodModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_MALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_FEMALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
-		event.registerEntityRenderer(BvcEntities.BVC_SALMON_ATLANTIC.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
+		event.registerEntityRenderer(BvcEntities.BVC_SALMON_PACIFIC.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 	}
 
 }
