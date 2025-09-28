@@ -39,6 +39,12 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
         this.add(BvcItems.MALE_SALMON.get(), "Male Salmon");
         this.add(BvcItems.FEMALE_SALMON.get(), "Female Salmon");
         this.add(BvcItems.PACIFIC_SALMON.get(), "Pacific Salmon");
+        this.add(BvcItems.ATLANTIC_COD_SPECIMEN.get(), "Atlantic Cod Specimen");
+        this.add(BvcItems.PACIFIC_COD_SPECIMEN.get(), "Pacific Cod Specimen");
+        this.add(BvcItems.HADDOCK_COD_SPECIMEN.get(), "Haddock Cod Specimen");
+        this.add(BvcItems.PACIFIC_SALMON_SPECIMEN.get(), "Pacific Salmon Specimen");
+        this.add(BvcItems.MALE_SALMON_SPECIMEN.get(),"Male Salmon Specimen");
+        this.add(BvcItems.FEMALE_SALMON_SPECIMEN.get(),"Female Salmon Specimen");
     }
     
 }

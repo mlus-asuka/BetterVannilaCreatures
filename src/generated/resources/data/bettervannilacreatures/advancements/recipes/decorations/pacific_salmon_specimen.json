@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pacific_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bettervannilacreatures:pacific_salmon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bettervannilacreatures:pacific_salmon_specimen"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_pacific_salmon",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bettervannilacreatures:pacific_salmon_specimen"
+    ]
+  },
+  "sends_telemetry_event": false
+}

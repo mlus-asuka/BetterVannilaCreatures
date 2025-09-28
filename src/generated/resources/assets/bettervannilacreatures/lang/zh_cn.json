@@ -1,4 +1,10 @@
 {
+  "block.bettervannilacreatures.atlantic_cod_specimen": "大西洋鳕鱼标本",
+  "block.bettervannilacreatures.female_salmon_specimen": "雌性鲑鱼标本",
+  "block.bettervannilacreatures.haddock_cod_specimen": "黑线鳕鱼标本",
+  "block.bettervannilacreatures.male_salmon_specimen": "雄性鲑鱼标本",
+  "block.bettervannilacreatures.pacific_cod_specimen": "太平洋鳕鱼标本",
+  "block.bettervannilacreatures.pacific_salmon_specimen": "太平洋鲑鱼标本",
   "entity.bettervannilacreatures.atlantic_cod": "大西洋鳕鱼",
   "entity.bettervannilacreatures.female_salmon": "雌性鲑鱼",
   "entity.bettervannilacreatures.haddock_cod": "黑线鳕鱼",

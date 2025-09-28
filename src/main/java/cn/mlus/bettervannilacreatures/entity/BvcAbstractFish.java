@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -16,7 +17,9 @@ import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeMod;
@@ -58,6 +61,15 @@ public abstract class BvcAbstractFish extends AbstractFish implements GeoEntity{
     public void setScale(float scale){
         entityData.set(SCALE, Math.clamp(scale, 0.8f, 1.1f));
     }
+
+    @Nullable
+    @Override
+    public ItemEntity spawnAtLocation(@NotNull ItemStack pStack) {
+        if(pStack.is(ItemTags.FISHES))
+            pStack.getOrCreateTag().putFloat("Scale", getScale());
+        return super.spawnAtLocation(pStack);
+    }
+
     public void travel(@NotNull Vec3 pTravelVector) {
         if (this.isEffectiveAi() && this.isInWater()) {
             this.moveRelative(this.getSpeed(), pTravelVector);
@@ -116,7 +128,7 @@ public abstract class BvcAbstractFish extends AbstractFish implements GeoEntity{
 
     public static AttributeSupplier.@NotNull Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 3.0)
+                .add(Attributes.MAX_HEALTH, 6.0)
                 .add(Attributes.MOVEMENT_SPEED,0.6)
                 .add(ForgeMod.SWIM_SPEED.get(),1);
     }

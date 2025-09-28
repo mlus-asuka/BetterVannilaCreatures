@@ -37,5 +37,11 @@ public class BvcChineseLanguangeProvider extends LanguageProvider {
         this.add(BvcItems.MALE_SALMON.get(), "雄性鲑鱼");
         this.add(BvcItems.FEMALE_SALMON.get(), "雌性鲑鱼");
         this.add(BvcItems.PACIFIC_SALMON.get(), "太平洋鲑鱼");
+        this.add(BvcItems.ATLANTIC_COD_SPECIMEN.get(), "大西洋鳕鱼标本");
+        this.add(BvcItems.PACIFIC_COD_SPECIMEN.get(), "太平洋鳕鱼标本");
+        this.add(BvcItems.HADDOCK_COD_SPECIMEN.get(), "黑线鳕鱼标本");
+        this.add(BvcItems.PACIFIC_SALMON_SPECIMEN.get(), "太平洋鲑鱼标本");
+        this.add(BvcItems.MALE_SALMON_SPECIMEN.get(), "雄性鲑鱼标本");
+        this.add(BvcItems.FEMALE_SALMON_SPECIMEN.get(), "雌性鲑鱼标本");
     }
 }

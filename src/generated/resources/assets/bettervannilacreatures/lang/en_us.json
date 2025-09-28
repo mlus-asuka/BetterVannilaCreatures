@@ -1,4 +1,10 @@
 {
+  "block.bettervannilacreatures.atlantic_cod_specimen": "Atlantic Cod Specimen",
+  "block.bettervannilacreatures.female_salmon_specimen": "Female Salmon Specimen",
+  "block.bettervannilacreatures.haddock_cod_specimen": "Haddock Cod Specimen",
+  "block.bettervannilacreatures.male_salmon_specimen": "Male Salmon Specimen",
+  "block.bettervannilacreatures.pacific_cod_specimen": "Pacific Cod Specimen",
+  "block.bettervannilacreatures.pacific_salmon_specimen": "Pacific Salmon Specimen",
   "entity.bettervannilacreatures.atlantic_cod": "Atlantic Cod",
   "entity.bettervannilacreatures.female_salmon": "Female Salmon",
   "entity.bettervannilacreatures.haddock_cod": "Haddock Cod",

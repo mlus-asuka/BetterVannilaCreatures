@@ -4,6 +4,8 @@ import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.client.model.entity.CodModel;
 import cn.mlus.bettervannilacreatures.client.model.entity.SalmonModel;
 import cn.mlus.bettervannilacreatures.client.render.entity.BvcRenderer;
+import cn.mlus.bettervannilacreatures.client.render.entity.BvcSpecimenRenderer;
+import cn.mlus.bettervannilacreatures.init.BvcBlockEntities;
 import cn.mlus.bettervannilacreatures.init.BvcEntities;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -20,6 +22,10 @@ public final class ClientModListener {
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_MALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_FEMALE.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
 		event.registerEntityRenderer(BvcEntities.BVC_SALMON_PACIFIC.get(), (context)-> new BvcRenderer<>(context, new SalmonModel()));
+
+		event.registerBlockEntityRenderer(BvcBlockEntities.ATLANTIC_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
+		event.registerBlockEntityRenderer(BvcBlockEntities.PACIFIC_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
+		event.registerBlockEntityRenderer(BvcBlockEntities.HADDOCK_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
 	}
 
 }

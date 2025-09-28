@@ -28,11 +28,11 @@ public class BvcBiomeModifier
     public static void register(BootstapContext<net.minecraftforge.common.world.BiomeModifier> context) {
         removeSpawn(context, "cod_ocean", BiomeTags.IS_OCEAN, EntityType.COD);
         removeSpawn(context,"salmon_ocean", BiomeTags.IS_OCEAN, EntityType.SALMON);
-        removeSpawn(context,"pufferfish_ocean", BiomeTags.IS_OCEAN, EntityType.PUFFERFISH);
-        removeSpawn(context,"tropical_fish_ocean", BiomeTags.IS_OCEAN, EntityType.TROPICAL_FISH);
+//        removeSpawn(context,"pufferfish_ocean", BiomeTags.IS_OCEAN, EntityType.PUFFERFISH);
+//        removeSpawn(context,"tropical_fish_ocean", BiomeTags.IS_OCEAN, EntityType.TROPICAL_FISH);
         removeSpawn(context,"cod_river", BiomeTags.IS_RIVER, EntityType.COD);
         removeSpawn(context,"salmon_river", BiomeTags.IS_RIVER, EntityType.SALMON);
-        removeSpawn(context,"pufferfish_river", BiomeTags.IS_RIVER, EntityType.PUFFERFISH);
+//        removeSpawn(context,"pufferfish_river", BiomeTags.IS_RIVER, EntityType.PUFFERFISH);
 
         addSpawn(context,"haddock_cod", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_HADDOCK_COD.get(),12,3,9));
         addSpawn(context,"atlantic_cod", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_ATLANTIC_COD.get(),10,3,9));
