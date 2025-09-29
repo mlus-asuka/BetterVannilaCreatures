@@ -32,6 +32,13 @@ public class BvcItemModelProvider extends ItemModelProvider {
         this.simpleItem(BvcItems.MALE_SALMON.get());
         this.simpleItem(BvcItems.FEMALE_SALMON.get());
         this.simpleItem(BvcItems.PACIFIC_SALMON.get());
+
+        this.simpleItem(BvcItems.HADDOCK_COD_SPECIMEN.get());
+        this.simpleItem(BvcItems.ATLANTIC_COD_SPECIMEN.get());
+        this.simpleItem(BvcItems.PACIFIC_COD_SPECIMEN.get());
+        this.simpleItem(BvcItems.PACIFIC_SALMON_SPECIMEN.get());
+        this.simpleItem(BvcItems.MALE_SALMON_SPECIMEN.get());
+        this.simpleItem(BvcItems.FEMALE_SALMON_SPECIMEN.get());
     }
 
     private void simpleItem(Item item) {
