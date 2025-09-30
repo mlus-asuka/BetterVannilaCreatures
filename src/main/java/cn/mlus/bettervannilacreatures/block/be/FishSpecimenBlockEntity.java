@@ -90,6 +90,4 @@ public class FishSpecimenBlockEntity extends BlockEntity implements GeoBlockEnti
         tag.putFloat("Scale", this.scale);
     }
 
-
-
 }

@@ -26,6 +26,9 @@ public final class ClientModListener {
 		event.registerBlockEntityRenderer(BvcBlockEntities.ATLANTIC_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
 		event.registerBlockEntityRenderer(BvcBlockEntities.PACIFIC_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
 		event.registerBlockEntityRenderer(BvcBlockEntities.HADDOCK_COD_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
+		event.registerBlockEntityRenderer(BvcBlockEntities.PACIFIC_SALMON_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
+		event.registerBlockEntityRenderer(BvcBlockEntities.MALE_SALMON_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
+		event.registerBlockEntityRenderer(BvcBlockEntities.FEMALE_SALMON_SPECIMEN.get(), (context) -> new BvcSpecimenRenderer());
 	}
 
 }

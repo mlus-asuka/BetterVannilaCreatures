@@ -152,7 +152,7 @@ public class FishSpecimen extends BaseEntityBlock implements GeoBlockEntity {
     }
     private static final VoxelShape AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
-    private static final VoxelShape HANGING_AABB = Block.box(0.0D, -20.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+    private static final VoxelShape HANGING_AABB = Block.box(0.0D, -26.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
