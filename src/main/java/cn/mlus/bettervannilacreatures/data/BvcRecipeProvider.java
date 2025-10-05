@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -23,30 +24,30 @@ public class BvcRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> pWriter) {
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.COD,1)
                 .requires(BvcItems.ATLANTIC_COD.get())
-                .unlockedBy(getHasName(BvcItems.ATLANTIC_COD.get()), has(BvcItems.ATLANTIC_COD.get())),"fish_fillet_from_atlantic_cod")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_atlantic_cod"));
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 2)
+                .unlockedBy(getHasName(BvcItems.ATLANTIC_COD.get()), has(BvcItems.ATLANTIC_COD.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("cod_from_atlantic_cod"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.COD,1)
                 .requires(BvcItems.HADDOCK_COD.get())
-                .unlockedBy(getHasName(BvcItems.HADDOCK_COD.get()), has(BvcItems.HADDOCK_COD.get())),"fish_fillet_from_haddock_cod")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_haddock_cod"));
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 2)
+                .unlockedBy(getHasName(BvcItems.HADDOCK_COD.get()), has(BvcItems.HADDOCK_COD.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("cod_from_haddock_cod"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.COD,1)
                 .requires(BvcItems.PACIFIC_COD.get())
-                .unlockedBy(getHasName(BvcItems.PACIFIC_COD.get()), has(BvcItems.PACIFIC_COD.get())),"fish_fillet_from_pacific_cod")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_pacific_cod"));
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 3)
+                .unlockedBy(getHasName(BvcItems.PACIFIC_COD.get()), has(BvcItems.PACIFIC_COD.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("cod_from_pacific_cod"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SALMON,1)
                 .requires(BvcItems.PACIFIC_SALMON.get())
-                .unlockedBy(getHasName(BvcItems.PACIFIC_SALMON.get()), has(BvcItems.PACIFIC_SALMON.get())),"fish_fillet_from_atlantic_salmon")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_atlantic_salmon"));
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 3)
+                .unlockedBy(getHasName(BvcItems.PACIFIC_SALMON.get()), has(BvcItems.PACIFIC_SALMON.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("salmon_from_pacific_salmon"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SALMON,1)
                 .requires(BvcItems.MALE_SALMON.get())
-                .unlockedBy(getHasName(BvcItems.MALE_SALMON.get()),has(BvcItems.MALE_SALMON.get())),"fish_fillet_from_male_salmon")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_male_salmon"));
-        buildErsRecipe(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ErsItems.FISH_FILLET.get(), 3)
+                .unlockedBy(getHasName(BvcItems.MALE_SALMON.get()), has(BvcItems.MALE_SALMON.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("salmon_from_male_salmon"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.SALMON,1)
                 .requires(BvcItems.FEMALE_SALMON.get())
-                .unlockedBy(getHasName(BvcItems.FEMALE_SALMON.get()),has(BvcItems.FEMALE_SALMON.get())),"fish_fillet_from_female_salmon")
-                .build(pWriter,BetterVannilaCreatures.prefix("fish_fillet_from_female_salmon"));
+                .unlockedBy(getHasName(BvcItems.FEMALE_SALMON.get()), has(BvcItems.FEMALE_SALMON.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("salmon_from_female_salmon"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, BvcItems.ATLANTIC_COD_SPECIMEN.get(),1)
                 .requires(BvcItems.ATLANTIC_COD.get())
