@@ -51,7 +51,7 @@ public class BvcEntities {
             () -> EntityType.Builder.of(YellowFinPuffer::new, MobCategory.WATER_AMBIENT)
                     .sized(1F,1F)
                     .build(BetterVannilaCreatures.prefix("yellow_fin_puffer").toString()));
-    public static final RegistryObject<EntityType<ObscurePuffer>> OBSCURE_PUFFER = ENTITIES.register("obscure_fin_puffer",
+    public static final RegistryObject<EntityType<ObscurePuffer>> OBSCURE_PUFFER = ENTITIES.register("obscure_puffer",
             () -> EntityType.Builder.of(ObscurePuffer::new, MobCategory.WATER_AMBIENT)
                     .sized(1F,1F)
                     .build(BetterVannilaCreatures.prefix("obscure_puffer").toString()));
