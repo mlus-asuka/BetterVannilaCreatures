@@ -1,7 +1,6 @@
 package cn.mlus.bettervannilacreatures.data;
 
 import cn.aurorian.ers.EcologicalReplenishmentStation;
-import cn.aurorian.ers.init.ErsItems;
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.init.BvcItems;
 import net.minecraft.data.PackOutput;
@@ -9,7 +8,6 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +46,14 @@ public class BvcRecipeProvider extends RecipeProvider {
                 .requires(BvcItems.FEMALE_SALMON.get())
                 .unlockedBy(getHasName(BvcItems.FEMALE_SALMON.get()), has(BvcItems.FEMALE_SALMON.get()))
                 .save(pWriter,BetterVannilaCreatures.prefix("salmon_from_female_salmon"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.PUFFERFISH,1)
+                .requires(BvcItems.YELLOW_FIN_PUFFER.get())
+                .unlockedBy(getHasName(BvcItems.YELLOW_FIN_PUFFER.get()), has(BvcItems.YELLOW_FIN_PUFFER.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("pufferfish_from_yellow_fin_puffer"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, Items.PUFFERFISH,1)
+                .requires(BvcItems.OBSCURE_PUFFER.get())
+                .unlockedBy(getHasName(BvcItems.OBSCURE_PUFFER.get()), has(BvcItems.OBSCURE_PUFFER.get()))
+                .save(pWriter,BetterVannilaCreatures.prefix("pufferfish_from_obscure_puffer"));
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, BvcItems.ATLANTIC_COD_SPECIMEN.get(),1)
                 .requires(BvcItems.ATLANTIC_COD.get())

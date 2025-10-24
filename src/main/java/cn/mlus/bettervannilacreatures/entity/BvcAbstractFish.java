@@ -1,6 +1,6 @@
 package cn.mlus.bettervannilacreatures.entity;
 
-import cn.mlus.bettervannilacreatures.client.render.entity.ai.BvcFishMoveControl;
+import cn.mlus.bettervannilacreatures.entity.ai.BvcFishMoveControl;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

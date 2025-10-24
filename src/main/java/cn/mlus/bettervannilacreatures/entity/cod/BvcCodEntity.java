@@ -35,7 +35,8 @@ public class BvcCodEntity extends BvcAbstractFish implements BvcEntity<BvcCodEnt
     @Override
     public void tick() {
         super.tick();
-        animator.tick();
+        if(level().isClientSide)
+            animator.tick();
     }
 
     public @NotNull ItemStack getBucketItemStack() {

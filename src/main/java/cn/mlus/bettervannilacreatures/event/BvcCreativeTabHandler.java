@@ -20,6 +20,8 @@ public class BvcCreativeTabHandler {
             event.accept(BvcItems.MALE_SALMON_SPAWN_EGG.get());
             event.accept(BvcItems.FEMALE_SALMON_SPAWN_EGG.get());
             event.accept(BvcItems.PACIFIC_SALMON_SPAWN_EGG.get());
+            event.accept(BvcItems.YELLOW_FIN_PUFFER_SPAWN_EGG.get());
+            event.accept(BvcItems.OBSCURE_PUFFER_SPAWN_EGG.get());
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(BvcItems.HADDOCK_COD.get());
@@ -28,6 +30,11 @@ public class BvcCreativeTabHandler {
             event.accept(BvcItems.MALE_SALMON.get());
             event.accept(BvcItems.FEMALE_SALMON.get());
             event.accept(BvcItems.PACIFIC_SALMON.get());
+            event.accept(BvcItems.YELLOW_FIN_PUFFER.get());
+            event.accept(BvcItems.OBSCURE_PUFFER.get());
+        }
+        if(event.getTabKey() == CreativeModeTabs.COMBAT){
+            event.accept(BvcItems.ENCHANTED_PUFFERFISH.get());
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.HADDOCK_COD_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -36,6 +43,8 @@ public class BvcCreativeTabHandler {
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.MALE_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.FEMALE_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.PACIFIC_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.YELLOW_FIN_PUFFER_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.OBSCURE_PUFFER_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){

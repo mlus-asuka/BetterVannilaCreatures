@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bettervannilacreatures:obscure_puffer"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bettervannilacreatures:entities/obscure_fin_puffer"
+}

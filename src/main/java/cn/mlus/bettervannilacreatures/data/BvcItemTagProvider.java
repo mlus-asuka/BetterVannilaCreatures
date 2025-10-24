@@ -3,6 +3,7 @@ package cn.mlus.bettervannilacreatures.data;
 import cn.aurorian.ers.init.ErsTagKeys;
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.init.BvcItems;
+import cn.mlus.bettervannilacreatures.init.BvcTagKeys;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -28,7 +29,9 @@ public class BvcItemTagProvider extends ItemTagsProvider{
                 .add(BvcItems.PACIFIC_COD.get())
                 .add(BvcItems.MALE_SALMON.get())
                 .add(BvcItems.FEMALE_SALMON.get())
-                .add(BvcItems.PACIFIC_SALMON.get());
+                .add(BvcItems.PACIFIC_SALMON.get())
+                .add(BvcItems.YELLOW_FIN_PUFFER.get())
+                .add(BvcItems.OBSCURE_PUFFER.get());
 
         this.tag(ErsTagKeys.KNOWN_FISH)
                 .add(BvcItems.HADDOCK_COD.get())
@@ -36,6 +39,12 @@ public class BvcItemTagProvider extends ItemTagsProvider{
                 .add(BvcItems.PACIFIC_COD.get())
                 .add(BvcItems.MALE_SALMON.get())
                 .add(BvcItems.FEMALE_SALMON.get())
-                .add(BvcItems.PACIFIC_SALMON.get());
+                .add(BvcItems.PACIFIC_SALMON.get())
+                .add(BvcItems.YELLOW_FIN_PUFFER.get())
+                .add(BvcItems.OBSCURE_PUFFER.get());
+
+        this.tag(BvcTagKeys.PUFFER)
+                .add(BvcItems.YELLOW_FIN_PUFFER.get())
+                .add(BvcItems.OBSCURE_PUFFER.get());
     }
 }

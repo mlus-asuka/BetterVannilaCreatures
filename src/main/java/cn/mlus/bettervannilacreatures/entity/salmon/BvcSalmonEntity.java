@@ -28,7 +28,8 @@ public abstract class BvcSalmonEntity extends BvcAbstractFish implements BvcEnti
     @Override
     public void tick() {
         super.tick();
-        animator.tick();
+        if(level().isClientSide)
+            animator.tick();
     }
 
     @Override

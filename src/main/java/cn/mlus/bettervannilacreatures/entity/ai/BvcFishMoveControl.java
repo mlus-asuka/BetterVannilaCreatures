@@ -1,4 +1,4 @@
-package cn.mlus.bettervannilacreatures.client.render.entity.ai;
+package cn.mlus.bettervannilacreatures.entity.ai;
 
 import cn.mlus.bettervannilacreatures.entity.BvcAbstractFish;
 import net.minecraft.util.Mth;

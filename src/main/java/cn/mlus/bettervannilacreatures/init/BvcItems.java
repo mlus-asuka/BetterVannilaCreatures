@@ -1,7 +1,10 @@
 package cn.mlus.bettervannilacreatures.init;
 
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
+import cn.mlus.bettervannilacreatures.item.EnchantedPuffer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -59,6 +62,20 @@ public class BvcItems {
                     () -> SoundEvents.BUCKET_EMPTY_FISH,
                     new Item.Properties().stacksTo(1)
             ));
+    public static final RegistryObject<Item> YELLOW_FIN_PUFFER_BUCKET = ITEMS.register("yellow_fin_puffer_bucket",
+            () -> new MobBucketItem(
+                    BvcEntities.YELLOW_FIN_PUFFER,
+                    () -> Fluids.WATER,
+                    () -> SoundEvents.BUCKET_EMPTY_FISH,
+                    new Item.Properties().stacksTo(1)
+            ));
+    public static final RegistryObject<Item> OBSCURE_PUFFER_BUCKET = ITEMS.register("obscure_puffer_bucket",
+            () -> new MobBucketItem(
+                    BvcEntities.OBSCURE_PUFFER,
+                    () -> Fluids.WATER,
+                    () -> SoundEvents.BUCKET_EMPTY_FISH,
+                    new Item.Properties().stacksTo(1)
+            ));
     //Spawn Egg
     public static final RegistryObject<Item> HADDOCK_COD_SPAWN_EGG = ITEMS.register("haddock_cod_spawn_egg",
             () -> new ForgeSpawnEggItem(
@@ -102,6 +119,20 @@ public class BvcItems {
                     0x000000,
                     new Item.Properties()
             ));
+    public static final RegistryObject<Item> YELLOW_FIN_PUFFER_SPAWN_EGG = ITEMS.register("yellow_fin_puffer_spawn_egg",
+            () -> new ForgeSpawnEggItem(
+                    BvcEntities.YELLOW_FIN_PUFFER,
+                    0xFFFFFF,
+                    0x000000,
+                    new Item.Properties()
+            ));
+    public static final RegistryObject<Item> OBSCURE_PUFFER_SPAWN_EGG = ITEMS.register("obscure_puffer_spawn_egg",
+            () -> new ForgeSpawnEggItem(
+                    BvcEntities.OBSCURE_PUFFER,
+                    0xFFFFFF,
+                    0x000000,
+                    new Item.Properties()
+            ));
     //Food
     public static final RegistryObject<Item> HADDOCK_COD = ITEMS.register("haddock_cod",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
@@ -115,6 +146,12 @@ public class BvcItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
     public static final RegistryObject<Item> PACIFIC_SALMON = ITEMS.register("pacific_salmon",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).build())));
+    public static final RegistryObject<Item> YELLOW_FIN_PUFFER = ITEMS.register("yellow_fin_puffer",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f)
+                    .effect(() -> new MobEffectInstance(MobEffects.POISON, 60, 0), 1.0f).build())));
+    public static final RegistryObject<Item> OBSCURE_PUFFER = ITEMS.register("obscure_puffer",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1f)
+                    .effect(() -> new MobEffectInstance(MobEffects.POISON, 60, 0), 1.0f).build())));
     //Specimen
     public static final RegistryObject<Item> ATLANTIC_COD_SPECIMEN = ITEMS.register("atlantic_cod_specimen",
             () -> new BlockItem(BvcBlocks.ATLANTIC_COD_SPECIMEN.get(),new Item.Properties().stacksTo(1)));
@@ -128,6 +165,9 @@ public class BvcItems {
             () -> new BlockItem(BvcBlocks.MALE_SALMON_SPECIMEN.get(),new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> FEMALE_SALMON_SPECIMEN = ITEMS.register("female_salmon_specimen",
             () -> new BlockItem(BvcBlocks.FEMALE_SALMON_SPECIMEN.get(),new Item.Properties().stacksTo(1)));
+    //Weapon
+    public static final RegistryObject<Item> ENCHANTED_PUFFERFISH = ITEMS.register("enchanted_pufferfish",
+            () -> new EnchantedPuffer(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

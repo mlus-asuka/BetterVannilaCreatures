@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "tag": "bettervannilacreatures:puffer"
+    },
+    {
+      "type": "forge:nbt",
+      "item": "minecraft:lingering_potion",
+      "nbt": "{Potion:'minecraft:healing'}"
+    }
+  ],
+  "result": {
+    "item": "bettervannilacreatures:enchanted_pufferfish"
+  }
+}
