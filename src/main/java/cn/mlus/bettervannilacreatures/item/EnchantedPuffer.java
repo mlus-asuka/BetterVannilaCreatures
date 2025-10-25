@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 
 public class EnchantedPuffer extends BowItem {
     public EnchantedPuffer(Properties pProperties) {
-        super(pProperties.defaultDurability(500));
+        super(pProperties.defaultDurability(50));
     }
 
     private int clientSideAttackTime;
@@ -40,23 +40,21 @@ public class EnchantedPuffer extends BowItem {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
 
-        if (!pPlayer.level().isClientSide) {
-            double range = 10.0;
-            LivingEntity closestTarget = null;
-            double closestDistance = Double.MAX_VALUE;
-            for (LivingEntity entity : pPlayer.level().getEntitiesOfClass(LivingEntity.class, pPlayer.getBoundingBox().inflate(range))) {
-                if (entity != pPlayer && (entity.getMobType().equals(MobType.UNDEAD) || entity instanceof Guardian)) {
-                    double distance = pPlayer.distanceToSqr(entity);
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
-                        closestTarget = entity;
-                    }
+        double range = 10.0;
+        LivingEntity closestTarget = null;
+        double closestDistance = Double.MAX_VALUE;
+        for (LivingEntity entity : pPlayer.level().getEntitiesOfClass(LivingEntity.class, pPlayer.getBoundingBox().inflate(range))) {
+            if (entity != pPlayer && (entity.getMobType().equals(MobType.UNDEAD) || entity instanceof Guardian)) {
+                double distance = pPlayer.distanceToSqr(entity);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestTarget = entity;
                 }
             }
-            if (closestTarget != null) {
-                this.clientSideAttackTime = 0;
-                this.clientSideCachedAttackTarget = closestTarget;
-            }
+        }
+        if (closestTarget != null) {
+            this.clientSideAttackTime = 0;
+            this.clientSideCachedAttackTarget = closestTarget;
         }
 
         if(clientSideCachedAttackTarget == null || !clientSideCachedAttackTarget.isAlive())
@@ -132,7 +130,7 @@ public class EnchantedPuffer extends BowItem {
                 if (!pLevel.isClientSide) {
                     pStack.hurtAndBreak(1, player, (p_289501_) -> p_289501_.broadcastBreakEvent(player.getUsedItemHand()));
                     if(clientSideCachedAttackTarget != null)
-                        clientSideCachedAttackTarget.hurt(pLevel.damageSources().magic(), 8.0F * f);
+                        clientSideCachedAttackTarget.hurt(pLevel.damageSources().magic(), 20.0F * f);
                 }
 
                 player.awardStat(Stats.ITEM_USED.get(this));

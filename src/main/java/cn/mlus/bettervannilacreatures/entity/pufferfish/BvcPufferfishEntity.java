@@ -17,6 +17,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.BodyRotationControl;
+import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
@@ -41,6 +42,7 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
         super(pEntityType, pLevel);
         this.refreshDimensions();
         this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10,0.02F,0.1F,true);
+        this.lookControl = new SmoothSwimmingLookControl(this,10);
         animator = new BvcPufferfishAnimator(this);
     }
 
@@ -48,11 +50,14 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        AnimationController<BvcPufferfishEntity> main = new AnimationController<>(this, "main", 0, state -> {
+        AnimationController<BvcPufferfishEntity> main = new AnimationController<>(this, "main", 2, state -> {
             RawAnimation builder = RawAnimation.begin();
             if(isInWater()){
                 if (state.isMoving()) {
-                    builder.thenLoop("animation.swim");
+                    if(getPuffState() == 0)
+                        builder.thenLoop("animation.swim");
+                    else
+                        builder.thenLoop("animation.swell_swim");
                 } else {
                     if(getPuffState() == 0)
                         builder.thenLoop("animation.idle");
@@ -70,9 +75,9 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
             RawAnimation builder = RawAnimation.begin();
 
             if(getPuffState() != 0){
-                builder.thenPlayAndHold("animation.swell");
+                builder.thenPlay("animation.swell");
             }else {
-                builder.thenPlayAndHold("animation.deflate");
+                builder.thenPlay("animation.deflate");
             }
             return state.setAndContinue(builder);
         });
@@ -120,7 +125,7 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
     public static AttributeSupplier.@NotNull Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 6.0)
-                .add(Attributes.MOVEMENT_SPEED,0.6)
+                .add(Attributes.MOVEMENT_SPEED,0.45)
                 .add(ForgeMod.SWIM_SPEED.get(),1);
     }
 
