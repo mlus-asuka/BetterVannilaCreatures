@@ -4,6 +4,7 @@ import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.entity.cod.AtlanticCod;
 import cn.mlus.bettervannilacreatures.entity.cod.HaddockCod;
 import cn.mlus.bettervannilacreatures.entity.cod.PacificCod;
+import cn.mlus.bettervannilacreatures.entity.nautilus.NautilusEntity;
 import cn.mlus.bettervannilacreatures.entity.pufferfish.ObscurePuffer;
 import cn.mlus.bettervannilacreatures.entity.pufferfish.YellowFinPuffer;
 import cn.mlus.bettervannilacreatures.entity.salmon.FemaleSalmon;
@@ -55,6 +56,10 @@ public class BvcEntities {
             () -> EntityType.Builder.of(ObscurePuffer::new, MobCategory.WATER_AMBIENT)
                     .sized(1F,1F)
                     .build(BetterVannilaCreatures.prefix("obscure_puffer").toString()));
+    public static final RegistryObject<EntityType<NautilusEntity>> NAUTILUS = ENTITIES.register("nautilus",
+            () -> EntityType.Builder.of(NautilusEntity::new, MobCategory.WATER_AMBIENT)
+                    .sized(0.55F,0.55F)
+                    .build(BetterVannilaCreatures.prefix("nautilus").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);

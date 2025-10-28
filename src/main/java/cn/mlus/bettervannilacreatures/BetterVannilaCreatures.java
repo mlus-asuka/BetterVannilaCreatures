@@ -23,6 +23,7 @@ public class BetterVannilaCreatures {
         BvcItems.register(eventBus);
         BvcCreativeTab.register(eventBus);
         BvcBiomeModifierSerializers.register(eventBus);
+        BvcMobEffects.register(eventBus);
     }
 
     public static ResourceLocation prefix(String name) {

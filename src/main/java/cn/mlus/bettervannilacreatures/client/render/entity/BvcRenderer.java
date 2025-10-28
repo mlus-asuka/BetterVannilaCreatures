@@ -41,6 +41,7 @@ public class BvcRenderer<T extends Mob & BvcEntity<T> & GeoAnimatable> extends G
         float scale = animatable.getScale();
         poseStack.scale(scale, scale, scale);
 
-        poseStack.mulPose(Axis.XP.rotationDegrees(animator.getModelPitch(partialTick, XRotDegree)));
+        if(animator != null)
+            poseStack.mulPose(Axis.XP.rotationDegrees(animator.getModelPitch(partialTick, XRotDegree)));
     }
 }

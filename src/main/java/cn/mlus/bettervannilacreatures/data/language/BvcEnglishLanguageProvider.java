@@ -3,6 +3,7 @@ package cn.mlus.bettervannilacreatures.data.language;
 import cn.mlus.bettervannilacreatures.BetterVannilaCreatures;
 import cn.mlus.bettervannilacreatures.init.BvcEntities;
 import cn.mlus.bettervannilacreatures.init.BvcItems;
+import cn.mlus.bettervannilacreatures.init.BvcMobEffects;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -22,6 +23,7 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
         this.add(BvcEntities.BVC_SALMON_PACIFIC.get(),"Pacific Salmon");
         this.add(BvcEntities.YELLOW_FIN_PUFFER.get(),"Yellow Fin Puffer");
         this.add(BvcEntities.OBSCURE_PUFFER.get(),"Obscure Puffer");
+        this.add(BvcEntities.NAUTILUS.get(),"Nautilus");
         //Item
         this.add(BvcItems.HADDOCK_COD_SPAWN_EGG.get(), "Haddock Cod Spawn Egg");
         this.add(BvcItems.ATLANTIC_COD_SPAWN_EGG.get(), "Atlantic Cod Spawn Egg");
@@ -31,6 +33,7 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
         this.add(BvcItems.PACIFIC_SALMON_SPAWN_EGG.get(),"Atlantic Salmon Spawn Egg");
         this.add(BvcItems.YELLOW_FIN_PUFFER_SPAWN_EGG.get(),"Yellow Fin Puffer Spawn Egg");
         this.add(BvcItems.OBSCURE_PUFFER_SPAWN_EGG.get(),"Obscure Puffer Spawn Egg");
+        this.add(BvcItems.NAUTILUS_SPAWN_EGG.get(),"Nautilus Spawn Egg");
         this.add(BvcItems.HADDOCK_COD_BUCKET.get(), "Haddock Cod Bucket");
         this.add(BvcItems.ATLANTIC_COD_BUCKET.get(), "Atlantic Cod Bucket");
         this.add(BvcItems.PACIFIC_COD_BUCKET.get(), "Pacific Cod Bucket");
@@ -39,6 +42,7 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
         this.add(BvcItems.PACIFIC_SALMON_BUCKET.get(),"Pacific Salmon Bucket");
         this.add(BvcItems.YELLOW_FIN_PUFFER_BUCKET.get(),"Yellow Fin Puffer Bucket");
         this.add(BvcItems.OBSCURE_PUFFER_BUCKET.get(),"Obscure Puffer Bucket");
+        this.add(BvcItems.NAUTILUS_BUCKET.get(),"Nautilus Bucket");
         this.add(BvcItems.HADDOCK_COD.get(), "Haddock Cod");
         this.add(BvcItems.ATLANTIC_COD.get(), "Atlantic Cod");
         this.add(BvcItems.PACIFIC_COD.get(), "Pacific Cod");
@@ -54,6 +58,8 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
         this.add(BvcItems.MALE_SALMON_SPECIMEN.get(),"Male Salmon Specimen");
         this.add(BvcItems.FEMALE_SALMON_SPECIMEN.get(),"Female Salmon Specimen");
         this.add(BvcItems.ENCHANTED_PUFFERFISH.get(), "Enchanted Pufferfish");
+
+        this.add(BvcMobEffects.NAUTILUS_BLESSING.get(), "Nautilus Blessing");
 
         this.add("advancements.bettervannilacreatures.monster_go_away.title","Monsters and demons, Go Away");
         this.add("advancements.bettervannilacreatures.monster_go_away.desc","Craft an Enchanted Pufferfish to fight against monsters.");

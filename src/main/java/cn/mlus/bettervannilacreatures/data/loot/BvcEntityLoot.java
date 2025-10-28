@@ -5,6 +5,7 @@ import cn.mlus.bettervannilacreatures.init.BvcEntities;
 import cn.mlus.bettervannilacreatures.init.BvcItems;
 import net.minecraft.data.loot.packs.VanillaEntityLoot;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -59,6 +60,10 @@ public class BvcEntityLoot extends VanillaEntityLoot {
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BvcItems.OBSCURE_PUFFER.get()))));
+        this.add(BvcEntities.NAUTILUS.get(),LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL))));
     }
 
     @Override

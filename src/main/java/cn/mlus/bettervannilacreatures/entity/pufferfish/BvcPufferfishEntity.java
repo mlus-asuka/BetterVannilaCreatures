@@ -5,11 +5,9 @@ import cn.mlus.bettervannilacreatures.client.animator.GeneralAnimator;
 import cn.mlus.bettervannilacreatures.entity.BvcEntity;
 import cn.mlus.bettervannilacreatures.entity.GeneralBodyControl;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -50,7 +48,7 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        AnimationController<BvcPufferfishEntity> main = new AnimationController<>(this, "main", 2, state -> {
+        AnimationController<BvcPufferfishEntity> main = new AnimationController<>(this, "main", 20, state -> {
             RawAnimation builder = RawAnimation.begin();
             if(isInWater()){
                 if (state.isMoving()) {
@@ -151,14 +149,12 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
                     this.playSound(SoundEvents.PUFFER_FISH_BLOW_UP, this.getSoundVolume(), this.getVoicePitch());
                     this.setPuffState(1);
                 } else if (this.inflateCounter > 40 && this.getPuffState() == 1) {
-                    this.playSound(SoundEvents.PUFFER_FISH_BLOW_UP, this.getSoundVolume(), this.getVoicePitch());
                     this.setPuffState(2);
                 }
 
                 ++this.inflateCounter;
             } else if (this.getPuffState() != 0) {
                 if (this.deflateTimer > 60 && this.getPuffState() == 2) {
-                    this.playSound(SoundEvents.PUFFER_FISH_BLOW_OUT, this.getSoundVolume(), this.getVoicePitch());
                     this.setPuffState(1);
                 } else if (this.deflateTimer > 100 && this.getPuffState() == 1) {
                     this.playSound(SoundEvents.PUFFER_FISH_BLOW_OUT, this.getSoundVolume(), this.getVoicePitch());
@@ -189,15 +185,6 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
         }
     }
 
-    public void playerTouch(@NotNull Player pEntity) {
-        int $$1 = this.getPuffState();
-        if (pEntity instanceof ServerPlayer && $$1 > 0) {
-            if (!this.isSilent()) {
-                ((ServerPlayer)pEntity).connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.PUFFER_FISH_STING, 0.0F));
-            }
-        }
-    }
-
     protected SoundEvent getAmbientSound() {
         return SoundEvents.PUFFER_FISH_AMBIENT;
     }
@@ -224,6 +211,11 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
             case 1 -> 0.7F;
             default -> 1.0F;
         };
+    }
+
+    @Override
+    public int getMaxSpawnClusterSize() {
+        return 2;
     }
 
     static {

@@ -22,6 +22,7 @@ public class BvcItemModelProvider extends ItemModelProvider {
         this.simpleItem(BvcItems.PACIFIC_SALMON_SPAWN_EGG.get());
         this.simpleItem(BvcItems.YELLOW_FIN_PUFFER_SPAWN_EGG.get());
         this.simpleItem(BvcItems.OBSCURE_PUFFER_SPAWN_EGG.get());
+        this.simpleItem(BvcItems.NAUTILUS_SPAWN_EGG.get());
 
         this.simpleItem(BvcItems.HADDOCK_COD_BUCKET.get());
         this.simpleItem(BvcItems.ATLANTIC_COD_BUCKET.get());
@@ -31,6 +32,7 @@ public class BvcItemModelProvider extends ItemModelProvider {
         this.simpleItem(BvcItems.PACIFIC_SALMON_BUCKET.get());
         this.simpleItem(BvcItems.YELLOW_FIN_PUFFER_BUCKET.get());
         this.simpleItem(BvcItems.OBSCURE_PUFFER_BUCKET.get());
+        this.simpleItem(BvcItems.NAUTILUS_BUCKET.get());
 
         this.simpleItem(BvcItems.HADDOCK_COD.get());
         this.simpleItem(BvcItems.ATLANTIC_COD.get());

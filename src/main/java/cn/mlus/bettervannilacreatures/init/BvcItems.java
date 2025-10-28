@@ -76,6 +76,13 @@ public class BvcItems {
                     () -> SoundEvents.BUCKET_EMPTY_FISH,
                     new Item.Properties().stacksTo(1)
             ));
+    public static final RegistryObject<Item> NAUTILUS_BUCKET = ITEMS.register("nautilus_bucket",
+            () -> new MobBucketItem(
+                    BvcEntities.NAUTILUS,
+                    () -> Fluids.WATER,
+                    () -> SoundEvents.BUCKET_EMPTY_FISH,
+                    new Item.Properties().stacksTo(1)
+            ));
     //Spawn Egg
     public static final RegistryObject<Item> HADDOCK_COD_SPAWN_EGG = ITEMS.register("haddock_cod_spawn_egg",
             () -> new ForgeSpawnEggItem(
@@ -129,6 +136,13 @@ public class BvcItems {
     public static final RegistryObject<Item> OBSCURE_PUFFER_SPAWN_EGG = ITEMS.register("obscure_puffer_spawn_egg",
             () -> new ForgeSpawnEggItem(
                     BvcEntities.OBSCURE_PUFFER,
+                    0xFFFFFF,
+                    0x000000,
+                    new Item.Properties()
+            ));
+    public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = ITEMS.register("nautilus_spawn_egg",
+            () -> new ForgeSpawnEggItem(
+                    BvcEntities.NAUTILUS,
                     0xFFFFFF,
                     0x000000,
                     new Item.Properties()

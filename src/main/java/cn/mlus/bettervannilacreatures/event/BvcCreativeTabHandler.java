@@ -22,6 +22,7 @@ public class BvcCreativeTabHandler {
             event.accept(BvcItems.PACIFIC_SALMON_SPAWN_EGG.get());
             event.accept(BvcItems.YELLOW_FIN_PUFFER_SPAWN_EGG.get());
             event.accept(BvcItems.OBSCURE_PUFFER_SPAWN_EGG.get());
+            event.accept(BvcItems.NAUTILUS_SPAWN_EGG.get());
         }
         if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
             event.accept(BvcItems.HADDOCK_COD.get());
@@ -45,6 +46,7 @@ public class BvcCreativeTabHandler {
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.PACIFIC_SALMON_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.YELLOW_FIN_PUFFER_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.OBSCURE_PUFFER_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.getEntries().putAfter(Items.AXOLOTL_BUCKET.getDefaultInstance(),BvcItems.NAUTILUS_BUCKET.get().getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
