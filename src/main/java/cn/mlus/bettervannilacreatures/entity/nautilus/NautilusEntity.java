@@ -161,29 +161,30 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
 
             if(getShelterTick() > 0){
                 navigation.stop();
-                setShelterTick(getShelterTick() -1);
+                setShelterTick(getShelterTick() - 1);
             }
 
-            if(tickCount % 100 == 0){
-                List<Entity> entities = level().getEntities(this, this.getBoundingBox().inflate(4.0),
+            if(isTame() && tickCount % 100 == 0){
+                List<Entity> entities = level().getEntities(this, this.getBoundingBox().inflate(8.0),
                         entity -> entity instanceof Player);
                 entities.forEach(entity -> {
                     if (entity instanceof Player player) {
-                       player.addEffect(new MobEffectInstance(BvcMobEffects.NAUTILUS_BLESSING.get(),160,0,false,false,true));
+                       player.addEffect(new MobEffectInstance(BvcMobEffects.NAUTILUS_BLESSING.get(),200,0,false,false,true));
                     }
                 });
+            }
+
+            if(tickCount % 400 == 0){
+                heal(1);
             }
         }
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        AnimationController<NautilusEntity> main = new AnimationController<>(this, "main", 2, state -> {
+        AnimationController<NautilusEntity> main = new AnimationController<>(this, "main", 10, state -> {
             RawAnimation builder = RawAnimation.begin();
-            if(getShelterTick() >0){
-                builder.thenLoop("animation.shelter");
-            }else {
-                if(temptGoal != null && temptGoal.isRunning()){
+                if(getFeedingTick() > 0){
                     if (state.isMoving()) {
                         builder.thenLoop("animation.swimming_feeding");
                     } else {
@@ -196,12 +197,20 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
                         builder.thenLoop("animation.idle");
                     }
                 }
-            }
-
             return state.setAndContinue(builder);
         });
 
-        controllerRegistrar.add(main);
+        AnimationController<NautilusEntity> control = new AnimationController<>(this, "control", 0, state -> {
+            RawAnimation builder = RawAnimation.begin();
+            if(getShelterTick() > 0){
+                builder.thenPlayAndHold("animation.shelter");
+            }else {
+                builder.thenPlay("animation.shelter_out");
+            }
+            return state.setAndContinue(builder);
+        });
+
+        controllerRegistrar.add(main,control);
     }
 
     public TemptGoal temptGoal;
@@ -213,14 +222,24 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
             @Override
             public void start() {
                 super.start();
-                setShelterTick(12000);
+                setShelterTick(1200);
                 NautilusEntity.this.addEffect(new MobEffectInstance(MobEffects.ABSORPTION,1200,5,false,false,true));
             }
         });
         this.goalSelector.addGoal(0, new ShelterGoal(this));
-        this.goalSelector.addGoal(1, new BvcFollowOwnerGoal(this, 6.0F, 3.0F, false));
+        this.goalSelector.addGoal(1, new BvcFollowOwnerGoal(this, 6.0F, 3.0F, false){
+            @Override
+            public boolean canUse() {
+                return super.canUse() && getShelterTick() == 0;
+            }
+        });
         this.goalSelector.addGoal(3, temptGoal);
-        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,1,40));
+        this.goalSelector.addGoal(4, new RandomSwimmingGoal(this,1,40){
+            @Override
+            public boolean canUse() {
+                return super.canUse() && getShelterTick() == 0;
+            }
+        });
     }
 
     @Override
@@ -249,6 +268,11 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
     @Override
     public GeneralAnimator<NautilusEntity> getAnimator() {
         return animator;
+    }
+
+    @Override
+    public @NotNull MobType getMobType() {
+        return MobType.WATER;
     }
 
     @Nullable
@@ -284,7 +308,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
         }
 
         public void start() {
-           setShelterTick(12000);
+           setShelterTick(1200);
            fish.addEffect(new MobEffectInstance(MobEffects.ABSORPTION,1200,5,false,false,true));
         }
     }

@@ -206,11 +206,7 @@ public abstract class BvcPufferfishEntity extends AbstractFish implements GeoEnt
     }
 
     private static float getScale(int pPuffState) {
-        return switch (pPuffState) {
-            case 0 -> 0.5F;
-            case 1 -> 0.7F;
-            default -> 1.0F;
-        };
+        return pPuffState == 0 ? 0.5F : 0.65F;
     }
 
     @Override
