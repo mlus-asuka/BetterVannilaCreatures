@@ -61,6 +61,9 @@ public class BvcEnglishLanguageProvider extends LanguageProvider {
 
         this.add(BvcMobEffects.NAUTILUS_BLESSING.get(), "Nautilus Blessing");
 
+        this.add("bvc.command.hanging", "Hanging Out now");
+        this.add("bvc.command.follow", "Following now");
+
         this.add("advancements.bettervannilacreatures.monster_go_away.title","Monsters and demons, Go Away");
         this.add("advancements.bettervannilacreatures.monster_go_away.desc","Craft an Enchanted Pufferfish to fight against monsters.");
     }

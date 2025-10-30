@@ -7,6 +7,8 @@
   "block.bettervannilacreatures.male_salmon_specimen": "Male Salmon Specimen",
   "block.bettervannilacreatures.pacific_cod_specimen": "Pacific Cod Specimen",
   "block.bettervannilacreatures.pacific_salmon_specimen": "Pacific Salmon Specimen",
+  "bvc.command.follow": "Following now",
+  "bvc.command.hanging": "Hanging Out now",
   "effect.bettervannilacreatures.nautilus_blessing": "Nautilus Blessing",
   "entity.bettervannilacreatures.atlantic_cod": "Atlantic Cod",
   "entity.bettervannilacreatures.female_salmon": "Female Salmon",

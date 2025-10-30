@@ -59,6 +59,9 @@ public class BvcChineseLanguangeProvider extends LanguageProvider {
 
         this.add(BvcMobEffects.NAUTILUS_BLESSING.get(), "鹦鹉螺祝福");
 
+        this.add("bvc.command.hanging", "闲逛");
+        this.add("bvc.command.follow", "跟随");
+
         this.add("advancements.bettervannilacreatures.monster_go_away.title","妖魔鬼怪快离开");
         this.add("advancements.bettervannilacreatures.monster_go_away.desc","制作一个附魔河豚来对抗怪物。");
     }

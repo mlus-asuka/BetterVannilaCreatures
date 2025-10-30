@@ -8,6 +8,7 @@ import cn.mlus.bettervannilacreatures.entity.ai.BvcFollowOwnerGoal;
 import cn.mlus.bettervannilacreatures.init.BvcItems;
 import cn.mlus.bettervannilacreatures.init.BvcMobEffects;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -55,7 +56,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
     public NautilusEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         animator = new BvcNautilusAnimator(this);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10,0.02F,0.1F,true);;
+        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10,0.02F,0.1F,true);
         this.lookControl = new SmoothSwimmingLookControl(this,10);
     }
 
@@ -66,6 +67,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(NautilusEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> FEEDING_TICK = SynchedEntityData.defineId(NautilusEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> SHELTER_TICK = SynchedEntityData.defineId(NautilusEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> COMMAND = SynchedEntityData.defineId(NautilusEntity.class, EntityDataSerializers.INT);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private final GeneralAnimator<NautilusEntity> animator;
     private static final Predicate<LivingEntity> SCARY_MOB;
@@ -88,6 +90,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
         this.entityData.define(FROM_BUCKET, false);
         this.entityData.define(FEEDING_TICK, 0);
         this.entityData.define(SHELTER_TICK, 0);
+        this.entityData.define(COMMAND,0);
     }
     public boolean fromBucket() {
         return this.entityData.get(FROM_BUCKET);
@@ -113,6 +116,14 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
         this.entityData.set(SHELTER_TICK, tick);
     }
 
+    public void setCommand(int command) {
+        this.entityData.set(COMMAND, command);
+    }
+
+    public int getCommand() {
+        return this.entityData.get(COMMAND);
+    }
+
     @Override
     public void saveToBucketTag(ItemStack pStack) {
         this.addAdditionalSaveData(pStack.getOrCreateTag());
@@ -125,11 +136,13 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
     public void addAdditionalSaveData(@NotNull CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
         pCompound.putBoolean("FromBucket", this.fromBucket());
+        pCompound.putInt("Command", this.getCommand());
     }
 
     public void readAdditionalSaveData(@NotNull CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.setFromBucket(pCompound.getBoolean("FromBucket"));
+        this.setCommand(pCompound.getInt("Command"));
     }
 
     @Override
@@ -230,7 +243,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
         this.goalSelector.addGoal(1, new BvcFollowOwnerGoal(this, 6.0F, 3.0F, false){
             @Override
             public boolean canUse() {
-                return super.canUse() && getShelterTick() == 0;
+                return super.canUse() && getShelterTick() == 0 && getCommand() == 0;
             }
         });
         this.goalSelector.addGoal(3, temptGoal);
@@ -244,6 +257,10 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
 
     @Override
     public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand pHand) {
+        if (player.getMainHandItem().getItem() == Items.WATER_BUCKET && (!this.isTame() || this.isOwnedBy(player))) {
+            return Bucketable.bucketMobPickup(player, pHand, this).orElse(InteractionResult.PASS);
+        }
+
         if (!level().isClientSide() && isFood(player.getMainHandItem())) {
             if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)){
                 this.tame(player);
@@ -251,6 +268,21 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
             }else{
                 this.level().broadcastEntityEvent(this, (byte)6);
             }
+        }
+
+        if (pHand == InteractionHand.MAIN_HAND && this.isTame() && this.isOwnedBy(player) && !isFood(player.getMainHandItem()))
+        {
+            if (!level().isClientSide()) {
+                this.setCommand(this.getCommand() + 1);
+                if (this.getCommand() == 2) {
+                    this.setCommand(0);
+                }
+            }
+            String commandText = "follow";
+            if (this.getCommand() == 1) {
+                commandText = "hanging";
+            }
+            player.displayClientMessage(Component.translatable("bvc.command." + commandText), true);
         }
         return super.mobInteract(player, pHand);
     }

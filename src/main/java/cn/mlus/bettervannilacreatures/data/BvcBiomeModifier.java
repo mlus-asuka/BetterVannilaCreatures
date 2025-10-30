@@ -6,7 +6,6 @@ import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
@@ -40,8 +39,8 @@ public class BvcBiomeModifier
         addSpawn(context, "female_salmon", BiomeTags.IS_RIVER, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_FEMALE.get(), 12, 2, 6));
         addSpawn(context, "atlantic_salmon", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.BVC_SALMON_PACIFIC.get(), 12, 3, 9));
         addSpawn(context, "yellow_fin_puffer", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.YELLOW_FIN_PUFFER.get(), 8, 1, 1));
-        addSpawn(context, "obscure_puffer", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.OBSCURE_PUFFER.get(), 8, 1, 1));
-        addSpawn(context, "obscure_puffer", BiomeTags.IS_RIVER, new MobSpawnSettings.SpawnerData(BvcEntities.OBSCURE_PUFFER.get(), 8, 3, 4));
+        addSpawn(context, "obscure_puffer_ocean", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.OBSCURE_PUFFER.get(), 8, 1, 1));
+        addSpawn(context, "obscure_puffer_river", BiomeTags.IS_RIVER, new MobSpawnSettings.SpawnerData(BvcEntities.OBSCURE_PUFFER.get(), 8, 3, 4));
         addSpawn(context, "nautilus", BiomeTags.IS_OCEAN, new MobSpawnSettings.SpawnerData(BvcEntities.NAUTILUS.get(), 4, 1, 1));
     }
 
@@ -58,7 +57,7 @@ public class BvcBiomeModifier
     }
 
     private static void register(BootstapContext<BiomeModifier> context, String name, Supplier<? extends BiomeModifier> modifier) {
-        context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, ResourceLocation.fromNamespaceAndPath(BetterVannilaCreatures.MODID, name)), modifier.get());
+        context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, BetterVannilaCreatures.prefix(name)), modifier.get());
     }
 
     @SafeVarargs
