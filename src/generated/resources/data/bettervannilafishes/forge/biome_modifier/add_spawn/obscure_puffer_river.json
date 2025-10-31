@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#minecraft:is_river",
+  "spawners": {
+    "type": "bettervannilafishes:obscure_puffer",
+    "maxCount": 4,
+    "minCount": 3,
+    "weight": 8
+  }
+}

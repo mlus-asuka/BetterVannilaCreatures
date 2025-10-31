@@ -1,12 +1,12 @@
 {
   "values": [
-    "bettervannilacreatures:haddock_cod",
-    "bettervannilacreatures:atlantic_cod",
-    "bettervannilacreatures:pacific_cod",
-    "bettervannilacreatures:male_salmon",
-    "bettervannilacreatures:female_salmon",
-    "bettervannilacreatures:pacific_salmon",
-    "bettervannilacreatures:yellow_fin_puffer",
-    "bettervannilacreatures:obscure_puffer"
+    "bettervannilafishes:haddock_cod",
+    "bettervannilafishes:atlantic_cod",
+    "bettervannilafishes:pacific_cod",
+    "bettervannilafishes:male_salmon",
+    "bettervannilafishes:female_salmon",
+    "bettervannilafishes:pacific_salmon",
+    "bettervannilafishes:yellow_fin_puffer",
+    "bettervannilafishes:obscure_puffer"
   ]
 }

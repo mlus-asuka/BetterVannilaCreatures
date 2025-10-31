@@ -1,0 +1,10 @@
+{
+  "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
+  "textures": {
+    "particle": "bettervannilafishes:block/pacific_salmon_specimen"
+  }
+}
