@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BvcMobEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, BetterVannilaCreatures.MODID);
-    public static final RegistryObject<MobEffect> NAUTILUS_BLESSING = MOB_EFFECTS.register("nautilus_blessing", () -> new NautilusBlessingEffect(MobEffectCategory.HARMFUL, 0x808080)
+    public static final RegistryObject<MobEffect> NAUTILUS_BLESSING = MOB_EFFECTS.register("nautilus_blessing", () -> new NautilusBlessingEffect(MobEffectCategory.BENEFICIAL, 0x808080)
             .addAttributeModifier(Attributes.ATTACK_SPEED, "C1433E6F-6644-2C5A-AA46-7BA5BBADBEF3", 0.10000000149011612, AttributeModifier.Operation.MULTIPLY_TOTAL));
 
     public static void register(IEventBus eventBus) {

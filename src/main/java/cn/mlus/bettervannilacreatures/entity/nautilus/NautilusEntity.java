@@ -38,6 +38,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.NotNull;
@@ -58,6 +61,7 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
         animator = new BvcNautilusAnimator(this);
         this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10,0.02F,0.1F,true);
         this.lookControl = new SmoothSwimmingLookControl(this,10);
+        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
     }
 
     protected @NotNull PathNavigation createNavigation(@NotNull Level pLevel) {
@@ -343,5 +347,9 @@ public class NautilusEntity extends TamableAnimal implements GeoEntity, BvcEntit
            setShelterTick(1200);
            fish.addEffect(new MobEffectInstance(MobEffects.ABSORPTION,1200,5,false,false,true));
         }
+    }
+
+    public boolean checkSpawnObstruction(LevelReader pLevel) {
+        return pLevel.isUnobstructed(this);
     }
 }
